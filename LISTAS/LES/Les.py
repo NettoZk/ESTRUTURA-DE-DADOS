@@ -54,7 +54,7 @@ class Les:
 
         # Exemplo:
 
-        # Antes (quant=3):
+        # Antes (quant=4):
 
         #  Índices:
         #   _____  _____  _____  _____  _____
@@ -67,7 +67,7 @@ class Les:
 
         # Inserir_fim('D'):
         
-        # Depois (quant=4):
+        # Depois (quant=5):
         #  Índices:
         #   _____  _____  _____  _____  _____
         #  |  0  ||  1  ||  2  ||  3  ||  4  |
@@ -88,7 +88,7 @@ class Les:
 
         # Exemplo:
 
-        # Antes (quant=4):
+        # Antes (quant=5):
         #  Índices:
         #   _____  _____  _____  _____  _____
         #  |  0  ||  1  ||  2  ||  3  ||  4  |
@@ -100,7 +100,7 @@ class Les:
 
         # Remover_fim():
 
-        # Depois (quant=3):
+        # Depois (quant=4):
         #  Índices:
         #   _____  _____  _____  _____  _____
         #  |  0  ||  1  ||  2  ||  3  ||  4  |
@@ -151,6 +151,7 @@ class Les:
         # i=1 <- valor da posição 0 (A)
 
         # Depois de inserir 'F' no início:
+        # Depois (quant=5):
 
         #  Índices:
         #   _____  _____  _____  _____  _____
@@ -196,6 +197,7 @@ class Les:
         # i=4 -> posição 3 recebe 'E'
 
         # Depois da remoção:
+        # depois (quant=4):
 
         #  Índices:
         #   _____  _____  _____  _____  _____
