@@ -166,9 +166,11 @@ class Les:
         if self.quant == 0:
             print('A lista está vazia')
         else:
-            for i in range(1, self.quant):
-                self.vetor[i - 1] = self.vetor[i]
-            self.vetor[self.quant - 1] = None
+            for i in range(self.quant - 1):
+                self.vetor[i] = self.vetor[i + 1]
+            # for i in range(1, self.quant):
+            #     self.vetor[i - 1] = self.vetor[i]
+            # self.vetor[self.quant - 1] = None # Limpa a última posição
             self.quant -= 1
         
         # Remove o primeiro elemento da lista, movendo todos para a esquerda.
