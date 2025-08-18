@@ -54,7 +54,7 @@ class Les:
 
         # Exemplo:
 
-        # Antes (quant=4):
+        # Antes (quant=3):
 
         #  Índices:
         #   _____  _____  _____  _____  _____
@@ -67,7 +67,7 @@ class Les:
 
         # Inserir_fim('D'):
         
-        # Depois (quant=5):
+        # Depois (quant=4):
         #  Índices:
         #   _____  _____  _____  _____  _____
         #  |  0  ||  1  ||  2  ||  3  ||  4  |
@@ -88,7 +88,7 @@ class Les:
 
         # Exemplo:
 
-        # Antes (quant=5):
+        # Antes (quant=4):
         #  Índices:
         #   _____  _____  _____  _____  _____
         #  |  0  ||  1  ||  2  ||  3  ||  4  |
@@ -100,7 +100,7 @@ class Les:
 
         # Remover_fim():
 
-        # Depois (quant=4):
+        # Depois (quant=3):
         #  Índices:
         #   _____  _____  _____  _____  _____
         #  |  0  ||  1  ||  2  ||  3  ||  4  |
