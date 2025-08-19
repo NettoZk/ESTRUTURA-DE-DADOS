@@ -46,6 +46,9 @@ class Les:
             self.quant -= 1
         
     def remover(self, valor):
+        # função que remove o valor da lista
+        # não há repetição
+        
         #pos = 999
         if self.quant == 0:
             print('A lista está vazia')
@@ -63,7 +66,42 @@ class Les:
                 print('Valor não existe ou não foi encontrado')
                 
     def removerTF(self, valor):
-        pass
+        # remover valor da lista
+        # retorna True se houver remoção
+        # e False caso contrário
+        
+        if self.quant == 0:
+            print('A lista está vazia')
+        else:
+            if valor in self.vetor:
+            
+                for i in range(self.quant):
+                    if valor == self.vetor[i]:
+                        for j in range(i, self.quant - 1):
+                            self.vetor[j] = self.vetor[j + 1]
+                        self.quant -= 1
+                        return True
+            else:
+                return False
     
     def remover_contar(self, valor):
-        pass
+        contador = 0
+        i = 0
+
+        if self.quant == 0:
+            print('A lista está vazia')
+        else:
+            while i < self.quant:
+                if self.vetor[i] == valor:
+                    for j in range(i, self.quant - 1):
+                        self.vetor[j] = self.vetor[j + 1]
+                    self.quant -= 1
+                    contador += 1
+                    # não incrementa i, pois elemento deslocado pode ser igual
+                else:
+                    i += 1
+            # Se contador continuar 0, significa que o valor não estava na lista
+            if contador == 0:
+                print('Valor não existe ou não foi encontrado')
+
+        return contador
