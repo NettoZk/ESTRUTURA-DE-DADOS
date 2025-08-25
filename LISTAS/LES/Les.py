@@ -69,15 +69,13 @@ class Les:
         if self.quant == 0:
             print('A lista está vazia')
         else:
-            if valor in self.vetor:
-                for i in range(self.quant):
-                    if valor == self.vetor[i]:
-                        for j in range(i, self.quant - 1):
-                            self.vetor[j] = self.vetor[j + 1]
-                        self.quant -= 1
-                        return True
-            else:
-                return False
+            for i in range(self.quant):
+                if self.vetor[i] == valor:
+                    for j in range(i, self.quant - 1):
+                        self.vetor[j] = self.vetor[j + 1]
+                    self.quant -= 1
+                    return True
+            return False
     
     def remover_contar(self, valor):
         contador = 0
