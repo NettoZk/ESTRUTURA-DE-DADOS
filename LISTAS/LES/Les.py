@@ -49,11 +49,12 @@ class Les:
         # função que remove o valor da lista
         # não há repetição
         
+        
         if self.quant == 0:
             print('A lista está vazia')
         else:
             i = 0
-            while i < self.quan and self.vetor[i] != valor:
+            while i < self.quant and self.vetor[i] != valor:
                 i += 1
             if i != self.quant:
                 for j in range(i, self.quant - 1):
