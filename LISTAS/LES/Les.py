@@ -49,19 +49,16 @@ class Les:
         # função que remove o valor da lista
         # não há repetição
         
-        #pos = 999
         if self.quant == 0:
             print('A lista está vazia')
         else:
-            if valor in self.vetor:
-                for i in range(self.quant):
-                    if valor == self.vetor[i]:
-                        # pos = i
-                        # for i in range(pos, self.quant - 1):
-                        for j in range(i, self.quant - 1):
-                            self.vetor[j] = self.vetor[j + 1]
-                        self.quant -= 1
-                        return  #coloquei para que caso haja repetição ele pare na primeira, se retirar, tira todas
+            i = 0
+            while i < self.quan and self.vetor[i] != valor:
+                i += 1
+            if i != self.quant:
+                for j in range(i, self.quant - 1):
+                    self.vetor[j] = self.vetor[j + 1]
+                self.quant -= 1
             else:
                 print('Valor não existe ou não foi encontrado')
                 
@@ -69,12 +66,10 @@ class Les:
         # remover valor da lista
         # retorna True se houver remoção
         # e False caso contrário
-        
         if self.quant == 0:
             print('A lista está vazia')
         else:
             if valor in self.vetor:
-            
                 for i in range(self.quant):
                     if valor == self.vetor[i]:
                         for j in range(i, self.quant - 1):
