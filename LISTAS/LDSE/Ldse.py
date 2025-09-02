@@ -22,6 +22,7 @@ class Ldse:
             self.prim = self.ult = No(valor, None)
         else:
             self.ult.prox = self.ult = No(valor, None)
+        self.quant += 1
         
     def remover_inicio(self):
         if self.quant == 1:
@@ -29,10 +30,36 @@ class Ldse:
         else:
             self.prim = self.prim.prox
         self.quant -= 1
-        
+    
+    def remover_fim(self):
+        if self.quant == 1:
+            self.prim = self.ult = None
+        else:
+            cont = 0
+            aux = self.prim
+            while aux.prox != self.ult:
+            # while cont < self.quant - 2:
+                aux = aux.prox
+                cont += 1
+            self.ult = aux
+            self.ult.prox = None
+        self.quant -= 1
+            
+    def ver_primeiro(self):
+        return self.prim.info
+    
+    def ver_ultimo(self):
+        return self.ult.info
+    
+    def ver_quantidade(self):
+        return self.quant
+    
+    def esta_vazia(self):
+        return self.quant == 0
+    
     def show(self): 
         aux = self.prim 
-        while aux != None: 
+        while aux != None:
             print(aux.info, end=' ') 
             aux = aux.prox 
         print('\n')
