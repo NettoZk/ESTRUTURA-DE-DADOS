@@ -63,3 +63,35 @@ class Ldse:
             print(aux.info, end=' ') 
             aux = aux.prox 
         print('\n')
+        
+    def remover_irmaos(self, valor):
+        if self.quant != 1 and self.quant != 0:
+            anterior_do_anterior = None
+            anterior = None
+            atual = self.prim
+            while atual != None and atual.info != valor:
+            # andando pela lista até achar valor ou chegar ao fim da lista
+                anterior_do_anterior = anterior
+                anterior = atual
+                atual = atual.prox
+            if atual != None and atual.info == valor:
+            # ou seja, achou valor na lista e ele está no nó atual
+                if anterior != None and anterior == self.prim:
+                # age se o irmão anterior for o primeiro da lista
+                    self.remover_inicio()
+                else:
+                    if anterior_do_anterior != None:
+                    # caso o irmão anterior não seja o primeiro da lista
+                        anterior_do_anterior.prox = atual
+                        anterior = None
+                        self.quant -= 1
+                if atual.prox != None and atual.prox == self.ult:
+                # age se o irmão posterior for o último da lista
+                    self.remover_fim()
+                else:
+                    if atual.prox != None:
+                    # caso o irmão posterior não seja o último da lista
+                        proximo = atual.prox
+                        atual.prox = proximo.prox
+                        proximo = None
+                        self.quant -= 1
