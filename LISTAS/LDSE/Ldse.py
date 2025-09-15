@@ -63,7 +63,8 @@ class Ldse:
             print(aux.info, end=' ') 
             aux = aux.prox 
         print('\n')
-        
+
+    
     def remover_irmaos(self, valor):
         if self.quant != 1 and self.quant != 0:
             anterior_do_anterior = None
