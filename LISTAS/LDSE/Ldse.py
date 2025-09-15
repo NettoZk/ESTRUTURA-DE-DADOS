@@ -162,3 +162,23 @@ class Ldse:
         
         if cont == 0:
             print('valor não encontrado')
+            
+    def removerCount(self, valor):
+        cont = 0
+        aux = self.prim
+        ant = None
+        while aux != None:
+            if aux.info == valor:
+                if ant == None:
+                    self.prim = aux.prox
+                    cont += 1
+                    self.quant -= 1
+                else:
+                    ant.prox = aux.prox
+                if aux == self.ult:
+                    self.ult = ant
+                
+                aux = aux.prox
+            else:
+                ant = aux
+                aux = aux.prox
