@@ -97,20 +97,23 @@ class Ldse:
                         self.quant -= 1
 
     def remover(self, valor):
-        if self.quant == 1:
+        if self.quant == 1 and self.prim.info == valor:
             self.prim = self.ult = None
             self.quant = 0
         else:
             aux = self.prim
             ant = None
-            while aux.info != valor:
+            while aux != None and aux.info != valor:
                 ant = aux
                 aux = aux.prox
-            if aux.info == valor and ant == None:
-                self.prim = aux.prox    
-            else:
-                ant.prox = aux.prox
-            self.quant -= 1
+            if aux != None:
+                if aux == self.prim:
+                    self.prim = self.prim.prox
+                else:
+                    ant.prox = aux.prox
+                    if aux == self.ult:
+                        self.ult = ant
+                self.quant -= 1
     
 
     def removerTF(self, valor):
@@ -147,13 +150,13 @@ class Ldse:
         ant = None
         
         while aux != None:
-            if self.quant == 1:
-                if self.prim.info == valor:
-                    self.prim = self.ult = None
-                    self.quant = 0
-                    cont += 1
+            if self.quant == 1 and self.prim.info == valor:
+                self.prim = self.ult = None
+                self.quant = 0
+                cont += 1
             else:
                 if aux.info == valor:
+                    ant.prox = aux.prox
                     cont += 1
                     self.quant -= 1
                 else:
@@ -163,7 +166,7 @@ class Ldse:
         if cont == 0:
             print('valor não encontrado')
             
-    def removerCount(self, valor):
+    def removerCount(self, valor):  
         cont = 0
         aux = self.prim
         ant = None
