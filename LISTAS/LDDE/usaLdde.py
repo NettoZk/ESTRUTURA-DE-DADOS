@@ -1,0 +1,35 @@
+import Ldde
+
+l = Ldde.Ldde()
+print('Verificando se a lista está vazia ou não:')
+if l.esta_vazia():
+    print('Lista está vazia\n')
+else:
+    print('Lista não está vazia\n')
+l.inserir_inicio('A')
+print('Lista após inserir inicio A: A')
+l.show()
+l.inserir_inicio('B')
+print('Lista após inserir inicio B: B A')
+l.show()
+l.inserir_fim('C')
+print('Lista após inserir fim C: B A C')
+l.show()
+l.inserir_inicio('E')
+print('Lista após inserir inicio E: E B A C')
+l.show()
+print('Lista impressa reversa: C A B E')
+l.show_reverso()
+l.remover_inicio()
+print('Lista após remover inicio: B A C')
+l.show()
+l.remover_fim()
+print('Lista após remover fim: B A')
+l.show()
+print('Verificando se a lista está vazia ou não:')
+if l.esta_vazia():
+    print('Lista está vazia\n')
+else:
+    print('Lista não está vazia\n')
+print('Lista:')
+l.show()
