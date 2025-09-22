@@ -121,27 +121,32 @@ class Ldde:
             
         self.quant -= 1 
         return True
-    
+        
     def remover_contar(self, valor):
         cont = 0
         aux = self.prim
-        if self.quant == 1 and aux.info == valor:
-            self.prim = self.ult = None
-            self.quant -= 1
-            cont += 1
-        else:
-            while aux != None:
-                if aux.info == valor:
-                    if aux.ant == None:
-                        aux = self.prim = aux.prox
-                        self.prim.ant = None
-                    elif aux.prox == None:
-                        aux = self.ult = aux.ant
-                        self.ult.prox = None
-                    else:
-                        aux.ant.prox = aux.prox
-                        aux.prox.ant = aux.ant
-                    cont += 1
-                    self.quant -= 1
+
+        while aux != None:
+            if aux.info == valor:
+                # Guarda referência do próximo antes de remover
+                proximo = aux.prox  
+
+                if self.quant == 1:  # lista com 1 único nó
+                    self.prim = self.ult = None
+                elif aux.ant == None:  # nó é o primeiro
+                    self.prim = aux.prox
+                    self.prim.ant = None
+                elif aux.prox == None:  # nó é o último
+                    self.ult = aux.ant
+                    self.ult.prox = None
+                else:  # nó no meio
+                    aux.ant.prox = aux.prox
+                    aux.prox.ant = aux.ant
+
+                self.quant -= 1
+                cont += 1
+                aux = proximo  # segue para o próximo nó
+            else:
                 aux = aux.prox
+
         print(f"O valor {valor} foi removido {cont} vez(es)")
