@@ -126,7 +126,7 @@ class Ldde:
         cont = 0
         aux = self.prim
 
-        while aux != None:
+        while aux != None:  
             if aux.info == valor:
                 # Guarda referência do próximo antes de remover
                 proximo = aux.prox  
