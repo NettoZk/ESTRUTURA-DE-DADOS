@@ -46,6 +46,9 @@ class Les:
                 self.vetor[i] = self.vetor[i + 1]
             self.quant -= 1
             
+    def ver_quantidade(self):
+        return self.quant
+            
 # ========================== função resposta AQUI =====================================
 
     def remover_depois(self, valor):
@@ -60,3 +63,4 @@ class Les:
                     self.quant -= 1
             else:
                 print('Valor não existe ou não foi encontrado')
+                
