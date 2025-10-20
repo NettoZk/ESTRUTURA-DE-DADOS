@@ -43,3 +43,9 @@ class Ldsec:
             self.ult = aux
             self.ult.prox = self.prim
         self.quant -= 1
+        
+    def show(self):
+        aux = self.prim
+        for i in range(self.quant):
+            print(aux.info)
+            aux = aux.prox
