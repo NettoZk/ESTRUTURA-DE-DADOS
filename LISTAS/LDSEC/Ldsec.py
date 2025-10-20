@@ -17,3 +17,11 @@ class Ldsec:
         else:
             self.prim = self.ult.prox = No(valor, self.prim)
         self.quant += 1
+        
+    def inserir_fim(self, valor):
+        if self.quant == 0:
+            self.prim = self.ult = No(valor, None)
+            self.ult.prox = self.prim
+        else:
+            self.ult.prox = self.ult = No(valor, self.prim)
+        self.quant += 1
