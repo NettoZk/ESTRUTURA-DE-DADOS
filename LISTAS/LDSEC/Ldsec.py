@@ -32,3 +32,14 @@ class Ldsec:
         else:
             self.prim = self.ult.prox = self.prim.prox
         self.quant -= 1
+        
+    def remover_inicio(self):
+        if self.quant == 1:
+            self.prim = self.ult = None
+        else:
+            aux = self.prim
+            while aux.prox != self.ult:
+                aux = aux.prox
+            self.ult = aux
+            self.ult.prox = self.prim
+        self.quant -= 1
