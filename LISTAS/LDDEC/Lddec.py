@@ -19,9 +19,18 @@ class Ldsec:
     
     def inserir_incio(self, valor):
         if self.quant == 0:
-            self.prim = self.ult = No(valor, None)
+            self.prim = self.ult = No(None, valor, None)
             self.prim.ant = self.ult.prox = self.prim
         else:
             self.prim.ant = self.prim = No(self.ult, valor, self.prim)
             self.ult.prox = self.prim
+        self.quant += 1
+        
+    def inserir_fim(self, valor):
+        if self.quant == 0:
+            self.prim = self.ult = No(None, valor, None)
+            self.prim.ant = self.ult.prox = self.prim
+        else:
+            self.ult.prox = self.ult = No(self.ult, valor, self.prim)
+            self.prim.ant = self.ult
         self.quant += 1
