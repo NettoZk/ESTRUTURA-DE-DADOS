@@ -34,3 +34,13 @@ class Ldsec:
             self.ult.prox = self.ult = No(self.ult, valor, self.prim)
             self.prim.ant = self.ult
         self.quant += 1
+        
+    def remover_fim(self):
+        if self.quant == 1:
+            self.prim = self.ult = None
+        else:
+            self.prim = self.prim.prox
+            self.prim.ant = self.ult
+            self.ult.prox = self.prim
+            
+            
