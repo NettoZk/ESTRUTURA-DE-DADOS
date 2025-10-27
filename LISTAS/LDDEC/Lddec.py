@@ -44,18 +44,24 @@ class Lddec:
             self.ult.prox = self.prim
     
     def remover_todos_apos(self, valor):
+        cont = 0  
+
         if self.quant == 1:
-            print("Não tem valores após o valor informado!")
+            print("\nNão tem valores após o valor informado!")
         else:
             aux = self.prim
             cont = 1
             while aux.info != valor:
                 aux = aux.prox
                 cont += 1
-            if aux.info == valor:
-                self.ult = aux
-                self.ult.prox = self.prim
-                self.prim.ant = self.ult
-        self.quant = cont
+                if aux == self.prim: 
+                    print("Valor não encontrado.")
+                    return 
+
+            self.ult = aux
+            self.ult.prox = self.prim
+            self.prim.ant = self.ult
+            self.quant = cont
+
 
             
