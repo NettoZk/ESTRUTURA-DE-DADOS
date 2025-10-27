@@ -5,7 +5,7 @@ class No:
         self.info = valor
         self.prox = proximo
         
-class Ldsec:
+class Lddec:
     
     def __init__(self):
         self.prim = self.ult = None
