@@ -1,4 +1,4 @@
-from Lddec import Lddec
+import Lddec
 
 lista = Lddec()
 
